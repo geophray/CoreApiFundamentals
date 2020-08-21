@@ -109,11 +109,32 @@ namespace CoreCodeCamp.Controllers
                     return _mapper.Map<TalkModel>(talk);
                 }
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Failed to update talk \"{model.Title}\".");
             }
             return BadRequest($"Could not save talk \"{model.Title}\".");
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(string moniker, int id)
+        {
+            try
+            {
+                var talk = await _repository.GetTalkByMonikerAsync(moniker, id);
+                if (talk == null) return NotFound("Failed to find the talk to delete");
+                _repository.Delete(talk);
+
+                if (await _repository.SaveChangesAsync())
+                {
+                    return Ok();
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Failed to delete talk");
+            }
+            return BadRequest("Could not delete talk.");
         }
         
     }
