@@ -2,8 +2,10 @@
 using CoreCodeCamp.Data;
 using CoreCodeCamp.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.UI.V3.Pages.Internal.Account;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using System;
 using System.Threading.Tasks;
 
 namespace CoreCodeCamp.Controllers
@@ -31,7 +33,7 @@ namespace CoreCodeCamp.Controllers
                 var talks = await _repository.GetTalksByMonikerAsync(moniker, true);
                 return _mapper.Map<TalkModel[]>(talks);
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get talks");
             }
@@ -45,7 +47,7 @@ namespace CoreCodeCamp.Controllers
                 var talk = await _repository.GetTalkByMonikerAsync(moniker, id, true);
                 return _mapper.Map<TalkModel>(talk);
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get talk");
             }
@@ -76,7 +78,7 @@ namespace CoreCodeCamp.Controllers
                     return Created(url, _mapper.Map<TalkModel>(talk));
                 }
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Failed to add new talk.");
             }
