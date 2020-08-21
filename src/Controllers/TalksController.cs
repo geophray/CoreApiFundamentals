@@ -42,7 +42,7 @@ namespace CoreCodeCamp.Controllers
         {
             try
             {
-                var talk = await _repository.GetTalkByMonikerAsync(moniker, id);
+                var talk = await _repository.GetTalkByMonikerAsync(moniker, id, true);
                 return _mapper.Map<TalkModel>(talk);
             }
             catch (System.Exception)
