@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCodeCamp", "CoreCodeCamp.csproj", "{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCodeCamp", "src\CoreCodeCamp.csproj", "{691C4189-12C1-44E8-9AFA-7F07236A9BC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCodeCamp.Test", "test\CoreCodeCamp.Test.csproj", "{9D8A2F84-4865-4C1B-B7C8-818F759FAC32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691C4189-12C1-44E8-9AFA-7F07236A9BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691C4189-12C1-44E8-9AFA-7F07236A9BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691C4189-12C1-44E8-9AFA-7F07236A9BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691C4189-12C1-44E8-9AFA-7F07236A9BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D8A2F84-4865-4C1B-B7C8-818F759FAC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D8A2F84-4865-4C1B-B7C8-818F759FAC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D8A2F84-4865-4C1B-B7C8-818F759FAC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D8A2F84-4865-4C1B-B7C8-818F759FAC32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
