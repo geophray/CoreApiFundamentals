@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCodeCamp", "CoreCodeCamp.csproj", "{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreCodeCamp", "src\CoreCodeCamp.csproj", "{691C4189-12C1-44E8-9AFA-7F07236A9BC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCodeCamp", "src\CoreCodeCamp.csproj", "{691C4189-12C1-44E8-9AFA-7F07236A9BC6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCodeCamp.Test", "test\CoreCodeCamp.Test.csproj", "{9D8A2F84-4865-4C1B-B7C8-818F759FAC32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreCodeCamp.Test", "test\CoreCodeCamp.Test.csproj", "{9D8A2F84-4865-4C1B-B7C8-818F759FAC32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5EBC609-68B7-47B5-AA9C-F9B50DC1CD34}.Release|Any CPU.Build.0 = Release|Any CPU
 		{691C4189-12C1-44E8-9AFA-7F07236A9BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{691C4189-12C1-44E8-9AFA-7F07236A9BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{691C4189-12C1-44E8-9AFA-7F07236A9BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
