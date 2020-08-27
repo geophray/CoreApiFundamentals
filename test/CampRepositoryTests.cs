@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoreCodeCamp.Data;
+using Moq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +9,10 @@ using Xunit;
 
 namespace CoreCodeCamp.Test
 {
-    public class CampRepositoryTests
+    public class GetAllCampsByEventDate_Should
     {
-        // GetAllCampsByEventDate Method Tests =========================== 
         [Fact]
-        public void GetAllCampsByEventDate_ReturnsArrayOfCamps()
+        public void ReturnArrayOfCamps()
         {
             throw new NotImplementedException();
             // arrange
@@ -20,7 +21,7 @@ namespace CoreCodeCamp.Test
         }
 
         [Fact]
-        public void GetAllCampsByEventDate_InDescendingOrder()
+        public void BeInDescendingOrder()
         {
             throw new NotImplementedException();
             // arrange
@@ -29,7 +30,7 @@ namespace CoreCodeCamp.Test
         }
 
         [Fact]
-        public void GetAllCampsByEventDate_TalksIncludedIf_IncludeTalksTrue()
+        public void IncludeTalks_If_IncludeTalksTrue()
         {
             throw new NotImplementedException();
             // arrange
@@ -38,7 +39,7 @@ namespace CoreCodeCamp.Test
         }
 
         [Fact]
-        public void GetAllCampsByEventDate_SpeakersIncludedIf_TalksIncluded()
+        public void IncludeSpeakers_If_TalksIncluded()
         {
             throw new NotImplementedException();
             // arrange
@@ -47,7 +48,7 @@ namespace CoreCodeCamp.Test
         }
 
         [Fact]
-        public void GetAllCampsByEventDate_TalksNotIncludedIf_IncludeTalksFalse()
+        public void NotIncludeTalks_If_IncludeTalksFalse()
         {
             throw new NotImplementedException();
             // arrange
@@ -55,11 +56,68 @@ namespace CoreCodeCamp.Test
             // assert 
         }
 
+    }
 
-        // GetAllCampsAsync Method Tests =========================== 
+    public class GetAllCampsAsync_Should
+    {
+        [Fact]
+        public void ReturnArrayOfCamps()
+        {
+            // arrange
+            var campContextMock = new Mock<CampContext>();
+
+
+            // act
+            // Get camps from repository
+
+            // assert 
+            // Verify that it returns an array of objects.
+
+        }
 
         [Fact]
-        public void GetAllCampsAsync_ReturnsArrayOfCamps()
+        public void BeInDescendingOrder()
+        {
+            throw new NotImplementedException();
+            // arrange
+            // act
+            // assert 
+        }
+
+        [Fact]
+        public void IncludeTalks_If_IncludeTalksTrue()
+        {
+            throw new NotImplementedException();
+            // arrange
+            // act
+            // assert
+
+        }
+
+        [Fact]
+        public void IncludeSpeakers_If_TalksIncluded()
+        {
+            throw new NotImplementedException();
+            // arrange
+            // act
+            // assert 
+        }
+
+        [Fact]
+        public void NotIncludeTalks_If_IncludeTalksFalse()
+        {
+            throw new NotImplementedException();
+            // arrange
+            // act
+            // assert
+        }
+
+    }
+
+    public class GetCampAsync_Should
+    {
+        [Fact]
+        public void ReturnSingleCamp()
         {
             throw new NotImplementedException();
             // arrange
@@ -74,7 +132,7 @@ namespace CoreCodeCamp.Test
         }
 
         [Fact]
-        public void GetAllCampsAsync_InDescendingOrder()
+        public void ReturnCampWithMatchingMoniker()
         {
             throw new NotImplementedException();
             // arrange
@@ -83,7 +141,7 @@ namespace CoreCodeCamp.Test
         }
 
         [Fact]
-        public void GetAllCampsAsync_TalksIncludedIf_IncludeTalksTrue()
+        public void IncludeTalks_If_IncludeTalksTrue()
         {
             throw new NotImplementedException();
             // arrange
@@ -93,7 +151,7 @@ namespace CoreCodeCamp.Test
         }
 
         [Fact]
-        public void GetAllCampsAsync_SpeakersIncludedIf_TalksIncluded()
+        public void IncludeSpeakers_If_TalksIncluded()
         {
             throw new NotImplementedException();
             // arrange
@@ -102,61 +160,7 @@ namespace CoreCodeCamp.Test
         }
 
         [Fact]
-        public void GetAllCampsAsync_TalksNotIncludedIf_IncludeTalksFalse()
-        {
-            throw new NotImplementedException();
-            // arrange
-            // act
-            // assert
-        }
-
-        // GetCampAsync Method Tests =========================== 
-
-        [Fact]
-        public void GetCampAsync_ReturnsSingleCampObject()
-        {
-            throw new NotImplementedException();
-            // arrange
-            // create fake repository
-
-            // act
-            // Get camps from repository
-
-            // assert 
-            // Verify that it returns an array of objects.
-
-        }
-
-        [Fact]
-        public void GetCampAsync_MonikerMatchesReturnedCamp()
-        {
-            throw new NotImplementedException();
-            // arrange
-            // act
-            // assert 
-        }
-
-        [Fact]
-        public void GetCampAsync_TalksIncludedIf_IncludeTalksTrue()
-        {
-            throw new NotImplementedException();
-            // arrange
-            // act
-            // assert
-
-        }
-
-        [Fact]
-        public void GetCampAsync_SpeakersIncludedIf_TalksIncluded()
-        {
-            throw new NotImplementedException();
-            // arrange
-            // act
-            // assert 
-        }
-
-        [Fact]
-        public void GetCampAsync_TalksNotIncludedIf_IncludeTalksFalse()
+        public void NotIncludeTalks_If_IncludeTalksFalse()
         {
             throw new NotImplementedException();
             // arrange
