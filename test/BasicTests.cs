@@ -7,15 +7,15 @@ namespace CoreCodeCamp.Test
     public class BasicTests
     {
         [Fact]
-        public void PassingTest()
+        public void EqualVals_AreEqual()
         {
             Assert.Equal(4, Add(2, 2));
         }
 
         [Fact]
-        public void FailingTest()
+        public void NotEqualVals_NotEqual()
         {
-            Assert.Equal(5, Add(2, 2));
+            Assert.NotEqual(5, Add(2, 2));
         }
 
         int Add(int x, int y)
@@ -26,7 +26,6 @@ namespace CoreCodeCamp.Test
         [Theory]
         [InlineData(3)]
         [InlineData(5)]
-        [InlineData(6)]
 
         public void MyFirstTheory(int value)
         {
