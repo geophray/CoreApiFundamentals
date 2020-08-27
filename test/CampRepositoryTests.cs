@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace CoreCodeCamp.Test
 {
@@ -25,6 +26,23 @@ namespace CoreCodeCamp.Test
             // assert 
                 // Verify that it returns an array of objects.
 
+        }
+
+        [Fact]
+        public void TalksIncludedIf_IncludeTalksTrue()
+        {
+            // arrange
+            // act
+            // assert
+
+        }
+
+        [Fact]
+        public void TalksNotIncludedIf_IncludeTalksFalse()
+        {
+            // arrange
+            // act
+            // assert
         }
 
     }
