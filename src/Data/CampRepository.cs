@@ -10,10 +10,10 @@ namespace CoreCodeCamp.Data
 {
   public class CampRepository : ICampRepository
   {
-    private readonly CampContext _context;
+    private readonly ICampContext _context;
     private readonly ILogger<CampRepository> _logger;
 
-    public CampRepository(CampContext context, ILogger<CampRepository> logger)
+    public CampRepository(ICampContext context, ILogger<CampRepository> logger)
     {
       _context = context;
       _logger = logger;

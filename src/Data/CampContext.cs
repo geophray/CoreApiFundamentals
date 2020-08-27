@@ -8,14 +8,24 @@ using Microsoft.Extensions.Configuration;
 
 namespace CoreCodeCamp.Data
 {
-  public class CampContext : DbContext
+  public class CampContext : DbContext, ICampContext
   {
     private readonly IConfiguration _config;
+
+    public CampContext()
+    {
+
+    }
 
     public CampContext(DbContextOptions options, IConfiguration config) : base(options)
     {
       _config = config;
     }
+       
+        public void MarkAsModified(Camp camp)
+        {
+            Entry(camp).State = EntityState.Modified;
+        }
 
     public DbSet<Camp> Camps { get; set; }
     public DbSet<Speaker> Speakers { get; set; }

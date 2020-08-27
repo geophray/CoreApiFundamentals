@@ -1,10 +1,7 @@
 ﻿using CoreCodeCamp.Data;
+using Microsoft.Extensions.Logging;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace CoreCodeCamp.Test
@@ -61,18 +58,20 @@ namespace CoreCodeCamp.Test
     public class GetAllCampsAsync_Should
     {
         [Fact]
-        public void ReturnArrayOfCamps()
+        public async void ReturnArrayOfCamps()
         {
             // arrange
-            var campContextMock = new Mock<CampContext>();
+            var mockDbContext = new Mock<CampContext>();
+            var mockLogger = new Mock<ILogger<CampRepository>>();
 
+            // Create mock repository
+            var mockRepository = new CampRepository(mockDbContext.Object, mockLogger.Object);
 
             // act
-            // Get camps from repository
+            var result = await mockRepository.GetAllCampsAsync();
 
             // assert 
-            // Verify that it returns an array of objects.
-
+            Assert.Equal(typeof(Camp[]), result.GetType());
         }
 
         [Fact]
