@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -14,7 +10,6 @@ namespace CoreCodeCamp.Data
 
     public CampContext()
     {
-
     }
 
     public CampContext(DbContextOptions options, IConfiguration config) : base(options)
@@ -22,14 +17,14 @@ namespace CoreCodeCamp.Data
       _config = config;
     }
        
-        public void MarkAsModified(Camp camp)
-        {
-            Entry(camp).State = EntityState.Modified;
-        }
+    public void MarkAsModified(Camp camp)
+    {
+        Entry(camp).State = EntityState.Modified;
+    }
 
-    public DbSet<Camp> Camps { get; set; }
-    public DbSet<Speaker> Speakers { get; set; }
-    public DbSet<Talk> Talks { get; set; }
+    public virtual DbSet<Camp> Camps { get; set; }
+    public virtual DbSet<Speaker> Speakers { get; set; }
+    public virtual DbSet<Talk> Talks { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

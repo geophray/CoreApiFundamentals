@@ -3,6 +3,9 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using System;
 using Xunit;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoreCodeCamp.Test
 {
@@ -64,11 +67,35 @@ namespace CoreCodeCamp.Test
             var mockDbContext = new Mock<CampContext>();
             var mockLogger = new Mock<ILogger<CampRepository>>();
 
-            // Create mock repository
-            var mockRepository = new CampRepository(mockDbContext.Object, mockLogger.Object);
+            var data = new List<Camp>
+            {
+                new Camp
+                {
+                    CampId = 1,
+                    Name = "MyMockCamp",
+                    Moniker = "MyMockMoniker",
+                },
+                new Camp
+                {
+                    CampId = 2,
+                    Name = "MyMockCamp2",
+                    Moniker = "MyMockMoniker2",
+                }
+
+            }.AsQueryable();
+
+            var mockCamps = new Mock<DbSet<Camp>>();
+            mockCamps.As<IQueryable<Camp>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockCamps.As<IQueryable<Camp>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockCamps.As<IQueryable<Camp>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockCamps.As<IQueryable<Camp>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            mockDbContext.Setup(c => c.Camps).Returns(mockCamps.Object);
+
+            var campRepository = new CampRepository(mockDbContext.Object, mockLogger.Object);
 
             // act
-            var result = await mockRepository.GetAllCampsAsync();
+            var result = await campRepository.GetAllCampsAsync();
 
             // assert 
             Assert.Equal(typeof(Camp[]), result.GetType());
